@@ -14,6 +14,7 @@ import InterviewQuestions from './pages/InterviewQuestions';
 import MockInterview from './pages/MockInterview';
 import CareerRoadmap from './pages/CareerRoadmap';
 import ResumeRewriter from './pages/ResumeRewriter';
+import ResumeBuilder from './pages/ResumeBuilder';
 
 import FeatureRedirect from './components/FeatureRedirect';
 
@@ -92,6 +93,16 @@ function App() {
             />
 
             {/* Specific Analysis Routes */}
+            <Route
+              path="/resume-builder"
+              element={
+                <ProtectedRoute>
+                  <DashboardLayout>
+                    <ResumeBuilder />
+                  </DashboardLayout>
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/resume-rewriter"
               element={

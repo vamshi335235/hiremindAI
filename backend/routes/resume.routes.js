@@ -12,5 +12,6 @@ router.post('/analyze', auth, resumeController.uploadResume); // Reusing uploadR
 router.get('/', auth, resumeController.getResumes);
 router.post('/ats', auth, resumeController.analyzeATS);
 router.post('/rewrite', auth, resumeController.rewriteResume);
+router.post('/build', auth, resumeController.buildResumeAI);
 
 module.exports = router;

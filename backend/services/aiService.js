@@ -279,6 +279,59 @@ const rewriteResume = async (resumeText, jobRole) => {
     }
 };
 
+const buildResumeWithAI = async (resumeText, jobRole) => {
+    try {
+        const prompt = `
+            You are an expert resume writer.
+
+            Rewrite the resume based on the target job role.
+
+            Rules:
+            * Do NOT add fake experience
+            * Only enhance existing content
+            * Use strong action verbs
+            * Improve clarity and grammar
+            * Add measurable impact
+
+            Resume:
+            ${resumeText}
+
+            Target Job Role:
+            ${jobRole}
+
+            Return STRICT JSON:
+            {
+                "name": "Applicant Full Name",
+                "contact": "Email, Phone, Location, Links",
+                "summary": "Professional Summary",
+                "skills": ["Skill 1", "Skill 2"],
+                "projects": [
+                    { "title": "Project Title", "description": "Project Description" }
+                ],
+                "experience": [
+                    { "company": "Company Name", "role": "Role Title", "description": "Experience Description" }
+                ],
+                "education": "Education Details (Degree, University, Year)"
+            }
+
+            Return ONLY the raw JSON object.
+        `;
+
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        let text = response.text();
+
+        const jsonMatch = text.match(/\{[\s\S]*\}/);
+        if (!jsonMatch) {
+            throw new Error("Invalid output from AI, JSON not found.");
+        }
+        return JSON.parse(jsonMatch[0].trim());
+    } catch (error) {
+        console.error("Resume Build Error:", error);
+        throw new Error("Failed to build resume with Gemini AI");
+    }
+};
+
 module.exports = {
     analyzeResume,
     generateATSScore,
@@ -286,5 +339,6 @@ module.exports = {
     conductMockInterview,
     analyzeSkillGap,
     generateCareerRoadmap,
-    rewriteResume
+    rewriteResume,
+    buildResumeWithAI
 };

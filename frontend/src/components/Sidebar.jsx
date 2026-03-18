@@ -1,19 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { 
-  LayoutDashboard, 
-  Upload, 
-  Target, 
-  FileText, 
-  MessageSquare, 
+import {
+  LayoutDashboard,
+  Upload,
+  Target,
+  FileText,
+  MessageSquare,
   TrendingUp,
   FileSignature,
-  X
+  X,
+  LayoutTemplate
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   const menuItems = [
     { title: 'Dashboard', icon: LayoutDashboard, path: '/dashboard' },
+    { title: 'Resume Builder', icon: LayoutTemplate, path: '/resume-builder' },
     { title: 'Upload Resume', icon: Upload, path: '/upload' },
     { title: 'Resume Rewriter', icon: FileSignature, path: '/resume-rewriter' },
     { title: 'ATS Checker', icon: Target, path: '/ats-checker' }, // Updated to generic path if ID not available

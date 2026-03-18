@@ -127,3 +127,19 @@ exports.rewriteResume = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+exports.buildResumeAI = async (req, res) => {
+    try {
+        const { resumeText, jobRole } = req.body;
+        
+        if (!resumeText || !jobRole) {
+            return res.status(400).json({ message: 'Resume text and target job role are required' });
+        }
+
+        const builtResume = await aiService.buildResumeWithAI(resumeText, jobRole);
+        res.json(builtResume);
+    } catch (error) {
+        console.error("Resume Build Controller Error:", error);
+        res.status(500).json({ error: error.message });
+    }
+};
