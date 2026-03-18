@@ -1,0 +1,37 @@
+--- PDF-PARSE INSPECTION ---
+ROOT TYPE: object
+ROOT KEYS: [
+  'AbortException',
+  'FormatError',
+  'InvalidPDFException',
+  'Line',
+  'LineDirection',
+  'LineStore',
+  'PDFParse',
+  'PasswordException',
+  'Point',
+  'Rectangle',
+  'ResponseException',
+  'Shape',
+  'Table',
+  'UnknownErrorException',
+  'VerbosityLevel',
+  'getException'
+]
+KEY: AbortException | TYPE: function
+KEY: FormatError | TYPE: function
+KEY: InvalidPDFException | TYPE: function
+KEY: Line | TYPE: function
+KEY: LineDirection | TYPE: object
+KEY: LineStore | TYPE: function
+KEY: PDFParse | TYPE: function
+KEY: PasswordException | TYPE: function
+KEY: Point | TYPE: function
+KEY: Rectangle | TYPE: function
+KEY: ResponseException | TYPE: function
+KEY: Shape | TYPE: function
+KEY: Table | TYPE: function
+KEY: UnknownErrorException | TYPE: function
+KEY: VerbosityLevel | TYPE: object
+KEY: getException | TYPE: function
+--- END ---

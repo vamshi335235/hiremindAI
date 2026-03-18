@@ -1,0 +1,7 @@
+[dotenv@17.3.1] injecting env (7) from .env -- tip: ΓÜÖ∩╕Å  suppress all logs with { quiet: true }
+Connecting to MongoDB...
+Connected.
+Attempting to create user with email: test1772953596867@example.com
+User created successfully: new ObjectId('69ad1ffc2388ca595556eab0')
+Attempting to create duplicate user...
+Duplicate test correctly failed: E11000 duplicate key error collection: hiremind.users index: email_1 dup key: { email: "test1772953596867@example.com" }

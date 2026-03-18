@@ -1,0 +1,10 @@
+[dotenv@17.3.1] injecting env (7) from .env -- tip: ≡ƒöÉ prevent building .env in docker: https://dotenvx.com/prebuild
+Connecting to MongoDB...
+Connected.
+Attempting to create user with email: test1772953544215@example.com
+Test Signup Error: TypeError: next is not a function
+    at model.<anonymous> (C:\Users\vamsh\Desktop\AI Resume Analyzer\backend\models\User.js:34:5)
+    at async Kareem.execPre (C:\Users\vamsh\Desktop\AI Resume Analyzer\backend\node_modules\kareem\index.js:70:24)
+    at async model.$__save (C:\Users\vamsh\Desktop\AI Resume Analyzer\backend\node_modules\mongoose\lib\model.js:376:5)
+    at async model.save (C:\Users\vamsh\Desktop\AI Resume Analyzer\backend\node_modules\mongoose\lib\model.js:642:5)
+    at async testSignup (C:\Users\vamsh\Desktop\AI Resume Analyzer\backend\test_signup.js:20:9)
